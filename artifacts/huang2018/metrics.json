@@ -1,0 +1,629 @@
+{
+  "sequence_count_table": [
+    {
+      "fault": "fault1",
+      "raw_event_rows": 756,
+      "unique_events": 741,
+      "gap_truncated_below_Mmin": 310,
+      "removed_Mmin_before_gap": 181,
+      "candidate_after_gap_Mmin": 250,
+      "removed_after_missing": 0,
+      "valid_sequences": 250,
+      "paper_sequences": 238,
+      "difference": 12
+    },
+    {
+      "fault": "fault2",
+      "raw_event_rows": 340,
+      "unique_events": 332,
+      "gap_truncated_below_Mmin": 118,
+      "removed_Mmin_before_gap": 121,
+      "candidate_after_gap_Mmin": 93,
+      "removed_after_missing": 0,
+      "valid_sequences": 93,
+      "paper_sequences": 27,
+      "difference": 66
+    },
+    {
+      "fault": "fault3",
+      "raw_event_rows": 139,
+      "unique_events": 137,
+      "gap_truncated_below_Mmin": 35,
+      "removed_Mmin_before_gap": 54,
+      "candidate_after_gap_Mmin": 48,
+      "removed_after_missing": 0,
+      "valid_sequences": 48,
+      "paper_sequences": 54,
+      "difference": -6
+    }
+  ],
+  "rf": {
+    "fault1": {
+      "precision": 0.027692307692307693,
+      "recall": 0.743801652892562,
+      "f1": 0.05339661821417977,
+      "confusion_matrix_tn_fp_fn_tp": [
+        1650,
+        474,
+        465,
+        1350
+      ],
+      "estimated_population_confusion_tn_fp_fn_tp": [
+        3300000.0,
+        948000.0,
+        9300.0,
+        27000.0
+      ],
+      "roc_auc": 0.8301515410914486,
+      "pr_auc": 0.10580670852500026,
+      "false_alarm_rate": 0.2231638418079096,
+      "sampled_test_precision": 0.7401315789473685,
+      "sampled_test_f1": 0.7419620774938169,
+      "test_band_probability": {
+        "boundary": {
+          "count": 1519,
+          "mean": 0.6463892463163576,
+          "median": 0.7473933010309471,
+          "predicted_degrading_fraction": 0.7096774193548387
+        },
+        "fault": {
+          "count": 1815,
+          "mean": 0.6759397180428274,
+          "median": 0.7816346358317389,
+          "predicted_degrading_fraction": 0.743801652892562
+        },
+        "normal": {
+          "count": 2124,
+          "mean": 0.28763914318932704,
+          "median": 0.16789154177506987,
+          "predicted_degrading_fraction": 0.2231638418079096
+        }
+      },
+      "stored_train_counts": {
+        "fault": 18820,
+        "normal": 26127,
+        "boundary_excluded": 11776
+      },
+      "virtual_fault_count_after_x1000": 18820000,
+      "paper_virtual_normal_sample_count": 18820000,
+      "actual_weighted_rf_rows": 44947,
+      "duration_seconds": 1.2641015999997762,
+      "model_path": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\models\\huang2018\\fault1_rf.joblib",
+      "test_sample_count": 5458
+    },
+    "fault2": {
+      "precision": 0.028957863707300156,
+      "recall": 0.559463986599665,
+      "f1": 0.055065534580825984,
+      "confusion_matrix_tn_fp_fn_tp": [
+        1220,
+        112,
+        263,
+        334
+      ],
+      "estimated_population_confusion_tn_fp_fn_tp": [
+        2440000.0,
+        224000.0,
+        5260.0,
+        6680.0
+      ],
+      "roc_auc": 0.8369173193293797,
+      "pr_auc": 0.02727549383709441,
+      "false_alarm_rate": 0.08408408408408409,
+      "sampled_test_precision": 0.7488789237668162,
+      "sampled_test_f1": 0.6404602109300096,
+      "test_band_probability": {
+        "boundary": {
+          "count": 480,
+          "mean": 0.37906245106272957,
+          "median": 0.3548088534965371,
+          "predicted_degrading_fraction": 0.41875
+        },
+        "fault": {
+          "count": 597,
+          "mean": 0.49041703108958073,
+          "median": 0.5874651426024807,
+          "predicted_degrading_fraction": 0.559463986599665
+        },
+        "normal": {
+          "count": 1332,
+          "mean": 0.17403563457037396,
+          "median": 0.10242942767962947,
+          "predicted_degrading_fraction": 0.08408408408408409
+        }
+      },
+      "stored_train_counts": {
+        "fault": 4866,
+        "normal": 25160,
+        "boundary_excluded": 3152
+      },
+      "virtual_fault_count_after_x1000": 4866000,
+      "paper_virtual_normal_sample_count": 4866000,
+      "actual_weighted_rf_rows": 30026,
+      "duration_seconds": 0.675668300000325,
+      "model_path": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\models\\huang2018\\fault2_rf.joblib",
+      "test_sample_count": 2409
+    },
+    "fault3": {
+      "precision": 0.08835904628330996,
+      "recall": 0.6631578947368421,
+      "f1": 0.15594059405940594,
+      "confusion_matrix_tn_fp_fn_tp": [
+        2122,
+        26,
+        128,
+        252
+      ],
+      "estimated_population_confusion_tn_fp_fn_tp": [
+        4244000.0,
+        52000.0,
+        2560.0,
+        5040.0
+      ],
+      "roc_auc": 0.9465304322258159,
+      "pr_auc": 0.47912665456144354,
+      "false_alarm_rate": 0.012104283054003724,
+      "sampled_test_precision": 0.9064748201438849,
+      "sampled_test_f1": 0.7659574468085106,
+      "test_band_probability": {
+        "boundary": {
+          "count": 267,
+          "mean": 0.3671872004392389,
+          "median": 0.304886369379169,
+          "predicted_degrading_fraction": 0.32209737827715357
+        },
+        "fault": {
+          "count": 380,
+          "mean": 0.6430564533082732,
+          "median": 0.7207780559776356,
+          "predicted_degrading_fraction": 0.6631578947368421
+        },
+        "normal": {
+          "count": 2148,
+          "mean": 0.09238882034019301,
+          "median": 0.0574996617965368,
+          "predicted_degrading_fraction": 0.012104283054003724
+        }
+      },
+      "stored_train_counts": {
+        "fault": 3748,
+        "normal": 17017,
+        "boundary_excluded": 1606
+      },
+      "virtual_fault_count_after_x1000": 3748000,
+      "paper_virtual_normal_sample_count": 3748000,
+      "actual_weighted_rf_rows": 20765,
+      "duration_seconds": 0.45423510000000533,
+      "model_path": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\models\\huang2018\\fault3_rf.joblib",
+      "test_sample_count": 2795
+    }
+  },
+  "lstm": {
+    "fault1": {
+      "model_path": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\models\\huang2018\\fault1_lstm.pt",
+      "runs": [
+        {
+          "repeat": 1,
+          "seed": 42,
+          "best_epoch": 12,
+          "epochs_run": 18,
+          "best_train_loss": 0.0048978365597730665,
+          "best_validation_loss": 0.0021389628543291273,
+          "duration_seconds": 200.50136049999992
+        },
+        {
+          "repeat": 2,
+          "seed": 43,
+          "best_epoch": 27,
+          "epochs_run": 33,
+          "best_train_loss": 0.002083813611566798,
+          "best_validation_loss": 0.0017592861067057112,
+          "duration_seconds": 365.7874541000001
+        },
+        {
+          "repeat": 3,
+          "seed": 44,
+          "best_epoch": 15,
+          "epochs_run": 21,
+          "best_train_loss": 0.004895592858308743,
+          "best_validation_loss": 0.003842834127857876,
+          "duration_seconds": 227.39078729999983
+        }
+      ],
+      "selected_repeat": 2,
+      "test_intrinsic": {
+        "points": 206064,
+        "rmse_seconds": 780.1328062280998,
+        "smape_percent": 8.372025244946537,
+        "mae_seconds": 658.9787719978921,
+        "seconds_per_sample": 4.0
+      }
+    },
+    "fault2": {
+      "model_path": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\models\\huang2018\\fault2_lstm.pt",
+      "runs": [
+        {
+          "repeat": 1,
+          "seed": 42,
+          "best_epoch": 1,
+          "epochs_run": 7,
+          "best_train_loss": 0.08471662912625313,
+          "best_validation_loss": 0.07401715215476945,
+          "duration_seconds": 29.474534500000118
+        },
+        {
+          "repeat": 2,
+          "seed": 43,
+          "best_epoch": 1,
+          "epochs_run": 7,
+          "best_train_loss": 0.11693951079285206,
+          "best_validation_loss": 0.0768505922022175,
+          "duration_seconds": 28.504059300000335
+        },
+        {
+          "repeat": 3,
+          "seed": 44,
+          "best_epoch": 20,
+          "epochs_run": 26,
+          "best_train_loss": 0.009343764814215186,
+          "best_validation_loss": 0.005348264536879689,
+          "duration_seconds": 103.99978640000063
+        }
+      ],
+      "selected_repeat": 3,
+      "test_intrinsic": {
+        "points": 75337,
+        "rmse_seconds": 1561.9557204674513,
+        "smape_percent": 13.51669082433245,
+        "mae_seconds": 1188.488710760496,
+        "seconds_per_sample": 4.0
+      }
+    },
+    "fault3": {
+      "model_path": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\models\\huang2018\\fault3_lstm.pt",
+      "runs": [
+        {
+          "repeat": 1,
+          "seed": 42,
+          "best_epoch": 2,
+          "epochs_run": 8,
+          "best_train_loss": 0.0820017050390346,
+          "best_validation_loss": 0.07516218858040553,
+          "duration_seconds": 8.55123840000033
+        },
+        {
+          "repeat": 2,
+          "seed": 43,
+          "best_epoch": 39,
+          "epochs_run": 40,
+          "best_train_loss": 0.010550197744574519,
+          "best_validation_loss": 0.00949205514880153,
+          "duration_seconds": 43.30912480000006
+        },
+        {
+          "repeat": 3,
+          "seed": 44,
+          "best_epoch": 22,
+          "epochs_run": 28,
+          "best_train_loss": 0.04417457970878739,
+          "best_validation_loss": 0.028633594364419812,
+          "duration_seconds": 30.02064270000028
+        }
+      ],
+      "selected_repeat": 2,
+      "test_intrinsic": {
+        "points": 36000,
+        "rmse_seconds": 4045.8746470792,
+        "smape_percent": 16.675149912459474,
+        "mae_seconds": 2365.8572462158204,
+        "seconds_per_sample": 4.0
+      }
+    }
+  },
+  "combined": {
+    "fault1": {
+      "evaluation": "causal rolling endpoint every 15 raw measurements plus final endpoint",
+      "evaluated_tail_points": 13827,
+      "fault_detection_recall": 0.75,
+      "false_alarm_rate_normal": 0.01762114537444934,
+      "boundary_detection_fraction": 0.6949769258075967,
+      "median_detection_lead_seconds_within_50000_band": 23398.0,
+      "rul_rmse_after_detection_seconds": 1618.1687389761234,
+      "rul_smape_after_detection_percent": 40.942614449630774,
+      "numerical_output_fraction": 0.6931366167643017,
+      "normal_output_nan_assertion": true,
+      "no_future_measurement_assertion": true
+    },
+    "fault2": {
+      "evaluation": "causal rolling endpoint every 15 raw measurements plus final endpoint",
+      "evaluated_tail_points": 5053,
+      "fault_detection_recall": 0.5667090216010165,
+      "false_alarm_rate_normal": 0.0,
+      "boundary_detection_fraction": 0.43491422805247226,
+      "median_detection_lead_seconds_within_50000_band": 18148.0,
+      "rul_rmse_after_detection_seconds": 1354.529188889006,
+      "rul_smape_after_detection_percent": 33.02524675297487,
+      "numerical_output_fraction": 0.4294478527607362,
+      "normal_output_nan_assertion": true,
+      "no_future_measurement_assertion": true
+    },
+    "fault3": {
+      "evaluation": "causal rolling endpoint every 15 raw measurements plus final endpoint",
+      "evaluated_tail_points": 2416,
+      "fault_detection_recall": 0.6545064377682404,
+      "false_alarm_rate_normal": 0.0,
+      "boundary_detection_fraction": 0.36009882643607166,
+      "median_detection_lead_seconds_within_50000_band": 19843.0,
+      "rul_rmse_after_detection_seconds": 1695.9175018791682,
+      "rul_smape_after_detection_percent": 33.45793159345774,
+      "numerical_output_fraction": 0.3675496688741722,
+      "normal_output_nan_assertion": true,
+      "no_future_measurement_assertion": true
+    }
+  },
+  "paper_comparison": [
+    {
+      "fault": "fault1",
+      "paper_train_sequences": 199,
+      "paper_test_sequences": 39,
+      "reproduction_valid_sequences": 250,
+      "paper_RFR_RMSE_seconds": 5294,
+      "paper_LSTM_RMSE_seconds": 1877,
+      "reproduction_LSTM_RMSE_seconds": 780.1328062280998,
+      "paper_LSTM_SMAPE_percent": 13.9,
+      "reproduction_LSTM_SMAPE_percent": 8.372025244946537,
+      "old_04_full_range_RMSE_seconds": 7870022.11,
+      "old_04_full_range_R2": -0.595888955
+    },
+    {
+      "fault": "fault2",
+      "paper_train_sequences": 23,
+      "paper_test_sequences": 4,
+      "reproduction_valid_sequences": 93,
+      "paper_RFR_RMSE_seconds": 5567,
+      "paper_LSTM_RMSE_seconds": 2557,
+      "reproduction_LSTM_RMSE_seconds": 1561.9557204674513,
+      "paper_LSTM_SMAPE_percent": 16.94,
+      "reproduction_LSTM_SMAPE_percent": 13.51669082433245,
+      "old_04_full_range_RMSE_seconds": 8707703.688,
+      "old_04_full_range_R2": -0.542861158
+    },
+    {
+      "fault": "fault3",
+      "paper_train_sequences": 44,
+      "paper_test_sequences": 10,
+      "reproduction_valid_sequences": 48,
+      "paper_RFR_RMSE_seconds": 5476,
+      "paper_LSTM_RMSE_seconds": 1469,
+      "reproduction_LSTM_RMSE_seconds": 4045.8746470792,
+      "paper_LSTM_SMAPE_percent": 11.74,
+      "reproduction_LSTM_SMAPE_percent": 16.675149912459474,
+      "old_04_full_range_RMSE_seconds": 7872709.387,
+      "old_04_full_range_R2": -0.552500462
+    }
+  ],
+  "sequence_generator_unit_test": {
+    "synthetic_source_length": 100,
+    "selected_indices_by_offset": [
+      [
+        90,
+        93,
+        96,
+        99
+      ],
+      [
+        89,
+        92,
+        95,
+        98
+      ],
+      [
+        88,
+        91,
+        94,
+        97
+      ]
+    ],
+    "short_history_indices": [
+      2,
+      5
+    ],
+    "passed": true
+  },
+  "curve_sequence_ids": {
+    "fault1": [
+      "01_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|28126778",
+      "01_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|22793870"
+    ],
+    "fault2": [
+      "01_M01_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|12638238",
+      "02_M01_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|29732852"
+    ],
+    "fault3": [
+      "01_M02_DC_train.csv|Flowcool leak|18061382",
+      "01_M02_DC_train.csv|Flowcool leak|36767406"
+    ]
+  },
+  "rf_sampled_before_population_weighting": {
+    "fault1": {
+      "precision": 0.7401315789473685,
+      "recall": 0.743801652892562,
+      "f1": 0.7419620774938169,
+      "confusion_matrix_tn_fp_fn_tp": [
+        1650,
+        474,
+        465,
+        1350
+      ],
+      "roc_auc": 0.8301515410914486,
+      "pr_auc": 0.8049087977685768,
+      "false_alarm_rate": 0.2231638418079096,
+      "test_band_probability": {
+        "boundary": {
+          "count": 1519,
+          "mean": 0.6463892463163576,
+          "median": 0.7473933010309471,
+          "predicted_degrading_fraction": 0.7096774193548387
+        },
+        "fault": {
+          "count": 1815,
+          "mean": 0.6759397180428274,
+          "median": 0.7816346358317389,
+          "predicted_degrading_fraction": 0.743801652892562
+        },
+        "normal": {
+          "count": 2124,
+          "mean": 0.287639143189327,
+          "median": 0.16789154177506987,
+          "predicted_degrading_fraction": 0.2231638418079096
+        }
+      },
+      "stored_train_counts": {
+        "fault": 18820,
+        "normal": 26127,
+        "boundary_excluded": 11776
+      },
+      "virtual_fault_count_after_x1000": 18820000,
+      "paper_virtual_normal_sample_count": 18820000,
+      "actual_weighted_rf_rows": 44947,
+      "duration_seconds": 1.382754499999919,
+      "model_path": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\models\\huang2018\\fault1_rf.joblib",
+      "test_sample_count": 5458
+    },
+    "fault2": {
+      "precision": 0.7488789237668162,
+      "recall": 0.559463986599665,
+      "f1": 0.6404602109300096,
+      "confusion_matrix_tn_fp_fn_tp": [
+        1220,
+        112,
+        263,
+        334
+      ],
+      "roc_auc": 0.8369173193293797,
+      "pr_auc": 0.6779400799374202,
+      "false_alarm_rate": 0.08408408408408409,
+      "test_band_probability": {
+        "boundary": {
+          "count": 480,
+          "mean": 0.3790624510627295,
+          "median": 0.35480885349653707,
+          "predicted_degrading_fraction": 0.41875
+        },
+        "fault": {
+          "count": 597,
+          "mean": 0.49041703108958073,
+          "median": 0.5874651426024807,
+          "predicted_degrading_fraction": 0.559463986599665
+        },
+        "normal": {
+          "count": 1332,
+          "mean": 0.17403563457037396,
+          "median": 0.10242942767962945,
+          "predicted_degrading_fraction": 0.08408408408408409
+        }
+      },
+      "stored_train_counts": {
+        "fault": 4866,
+        "normal": 25160,
+        "boundary_excluded": 3152
+      },
+      "virtual_fault_count_after_x1000": 4866000,
+      "paper_virtual_normal_sample_count": 4866000,
+      "actual_weighted_rf_rows": 30026,
+      "duration_seconds": 0.7280012999999599,
+      "model_path": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\models\\huang2018\\fault2_rf.joblib",
+      "test_sample_count": 2409
+    },
+    "fault3": {
+      "precision": 0.9064748201438849,
+      "recall": 0.6631578947368421,
+      "f1": 0.7659574468085106,
+      "confusion_matrix_tn_fp_fn_tp": [
+        2122,
+        26,
+        128,
+        252
+      ],
+      "roc_auc": 0.9465304322258159,
+      "pr_auc": 0.8545563347504922,
+      "false_alarm_rate": 0.012104283054003724,
+      "test_band_probability": {
+        "boundary": {
+          "count": 267,
+          "mean": 0.3671872004392389,
+          "median": 0.304886369379169,
+          "predicted_degrading_fraction": 0.32209737827715357
+        },
+        "fault": {
+          "count": 380,
+          "mean": 0.6430564533082732,
+          "median": 0.7207780559776356,
+          "predicted_degrading_fraction": 0.6631578947368421
+        },
+        "normal": {
+          "count": 2148,
+          "mean": 0.09238882034019301,
+          "median": 0.0574996617965368,
+          "predicted_degrading_fraction": 0.012104283054003724
+        }
+      },
+      "stored_train_counts": {
+        "fault": 3748,
+        "normal": 17017,
+        "boundary_excluded": 1606
+      },
+      "virtual_fault_count_after_x1000": 3748000,
+      "paper_virtual_normal_sample_count": 3748000,
+      "actual_weighted_rf_rows": 20765,
+      "duration_seconds": 0.44762459999992643,
+      "model_path": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\models\\huang2018\\fault3_rf.joblib",
+      "test_sample_count": 2795
+    }
+  },
+  "combined_before_lead_filter": {
+    "fault1": {
+      "evaluated_tail_points": 206064,
+      "fault_detection_recall": 0.7514147130153598,
+      "false_alarm_rate_normal": 0.026801667659321026,
+      "boundary_detection_fraction": 0.693270661034093,
+      "median_detection_lead_seconds": 23379.0,
+      "rul_rmse_after_detection_seconds": 767.854862403702,
+      "rul_smape_after_detection_percent": 21.952037833154662,
+      "numerical_output_fraction": 0.6921830111033466,
+      "normal_output_nan_assertion": true
+    },
+    "fault2": {
+      "evaluated_tail_points": 75337,
+      "fault_detection_recall": 0.5643929643929644,
+      "false_alarm_rate_normal": 0.0,
+      "boundary_detection_fraction": 0.4359940522456152,
+      "median_detection_lead_seconds": 19180.0,
+      "rul_rmse_after_detection_seconds": 1238.2133016158991,
+      "rul_smape_after_detection_percent": 30.598840965063122,
+      "numerical_output_fraction": 0.42981536296905903,
+      "normal_output_nan_assertion": true
+    },
+    "fault3": {
+      "evaluated_tail_points": 36000,
+      "fault_detection_recall": 0.6467539945300129,
+      "false_alarm_rate_normal": 0.0,
+      "boundary_detection_fraction": 0.3617946805866269,
+      "median_detection_lead_seconds": 19783.0,
+      "rul_rmse_after_detection_seconds": 1753.5392235482775,
+      "rul_smape_after_detection_percent": 31.750528085377017,
+      "numerical_output_fraction": 0.3673888888888889,
+      "normal_output_nan_assertion": true
+    }
+  },
+  "sample_interval_audit": {
+    "valid_sequence_count": 391,
+    "sequence_median_interval_seconds": 4.0,
+    "sequences_with_median_4_seconds": 391,
+    "median_fraction_exact_4_seconds_within_sequence": 0.9931324767390342,
+    "median_last_observation_to_fault_event_seconds": 398.0,
+    "max_last_observation_to_fault_event_seconds": 481904
+  },
+  "missing_removed_percent": 0.0021681617492466184,
+  "failure_anchored_position_only_rmse_seconds": 0.0
+}

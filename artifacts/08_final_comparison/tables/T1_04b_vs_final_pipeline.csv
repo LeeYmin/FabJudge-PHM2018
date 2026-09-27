@@ -1,0 +1,9 @@
+﻿fault_group,method,전체 임박 고장 수,회수 TP,놓친 고장 FN,recall,추가 검토 건수,rescue precision,LLM 호출 수,실제 API 비용,구분,호출·비용 범위,source_path
+fault1+2,04b,109,77,32,0.7064220183486238,0,,0,0.0,탐색/기술통계,추가 API 없음,artifacts/07b_rescue_lane_confirmatory/effect_vs_04b.csv; summary.json; api_attempt_log.jsonl
+fault1+2,04b + 구조 레인 E10,109,80,29,0.7339449541284404,25,0.12,275,0.08118578,탐색/기술통계,"07b fault group 실제 실험 총량(재시도·안정성 포함); E별 공통, 합산 금지",artifacts/07b_rescue_lane_confirmatory/effect_vs_04b.csv; summary.json; api_attempt_log.jsonl
+fault1+2,04b + 구조 레인 E20,109,82,27,0.7522935779816514,49,0.1020408163265306,275,0.08118578,확증(H1) 표본 기술통계,"07b fault group 실제 실험 총량(재시도·안정성 포함); E별 공통, 합산 금지",artifacts/07b_rescue_lane_confirmatory/effect_vs_04b.csv; summary.json; api_attempt_log.jsonl
+fault1+2,04b + 구조 레인 E30,109,86,23,0.7889908256880734,75,0.12,275,0.08118578,탐색/기술통계,"07b fault group 실제 실험 총량(재시도·안정성 포함); E별 공통, 합산 금지",artifacts/07b_rescue_lane_confirmatory/effect_vs_04b.csv; summary.json; api_attempt_log.jsonl
+fault3,04b,37,27,10,0.7297297297297297,0,,0,0.0,탐색/기술통계,추가 API 없음,artifacts/07b_rescue_lane_confirmatory/effect_vs_04b.csv; summary.json; api_attempt_log.jsonl
+fault3,04b + 구조 레인 E10,37,27,10,0.7297297297297297,2,0.0,22,0.006885758,탐색/기술통계,"07b fault group 실제 실험 총량(재시도·안정성 포함); E별 공통, 합산 금지",artifacts/07b_rescue_lane_confirmatory/effect_vs_04b.csv; summary.json; api_attempt_log.jsonl
+fault3,04b + 구조 레인 E20,37,28,9,0.7567567567567568,4,0.25,22,0.006885758,탐색/기술통계,"07b fault group 실제 실험 총량(재시도·안정성 포함); E별 공통, 합산 금지",artifacts/07b_rescue_lane_confirmatory/effect_vs_04b.csv; summary.json; api_attempt_log.jsonl
+fault3,04b + 구조 레인 E30,37,29,8,0.7837837837837838,7,0.2857142857142857,22,0.006885758,탐색/기술통계,"07b fault group 실제 실험 총량(재시도·안정성 포함); E별 공통, 합산 금지",artifacts/07b_rescue_lane_confirmatory/effect_vs_04b.csv; summary.json; api_attempt_log.jsonl

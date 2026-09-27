@@ -1,0 +1,41 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Data: keep large PHM2018 data out of Git
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Huang reproduction caches contain raw measurement excerpts and labels.
+artifacts/huang2018/sequences/
+artifacts/huang2018/rf_sample_*.parquet
+artifacts/huang2018/*_test_predictions.parquet
+artifacts/huang2018/raw_failure_events.csv
+
+# Local notebook execution kernels and profiles
+.jupyter/
+.ipython/
+
+# Local secrets
+.env
+*.env
+
+# Portfolio upload scope
+artifacts/
+tmp/
+output/
+.vscode/
+notebooks/notebooks/
+install_tools_windows.ps1
+setup_windows.ps1

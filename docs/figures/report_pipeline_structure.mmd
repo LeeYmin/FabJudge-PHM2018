@@ -1,0 +1,28 @@
+flowchart TB
+  subgraph ORIGINAL["04b: RF 게이트가 LSTM 경보를 유지 또는 제거"]
+    A["센서 입력 / 결정론적 feature"] --> B["LSTM 예측 ≤ 5,000초"]
+    A --> R["RF 확률"]
+    B --> G{"RF 확률 ≥ 0.5?"}
+    R --> G
+    G -->|예| O["04b 경보 유지"]
+    G -->|아니오| D["04b에서 경보 탈락"]
+  end
+  subgraph PROPOSED["경보 보존 구조: 검토 순서와 분석 깊이만 조정"]
+    C["LSTM 경보 전체"] --> T{"RF 확률 ≥ 0.5?"}
+    T -->|예| T1["tier1: 즉시 검토"]
+    T -->|아니오| RES["rescue: 경보 보존"]
+    RES --> EP["EvidencePacket noRF / 정답·식별자 제외"]
+    EP --> J["JEV: fault별 HIGH 25% / MID 50% / LOW 25%"]
+    J --> H["HIGH: 검토 우선"]
+    J --> M["MID: LLM 참고 분석"]
+    J --> L["LOW: 경보 유지 / 후순위 검토"]
+    M --> E["근거·반대 근거·불확실성·추가 확인"]
+    M --> F["응답 실패: MODEL_UNAVAILABLE 표시 / 경보 유지"]
+    T1 --> HUMAN["사람 검토 / 운영 판단"]
+    H --> HUMAN
+    E --> HUMAN
+    L --> HUMAN
+    F --> HUMAN
+  end
+  NOTE["07b 비교 실험은 rescue 271건 전체에 LLM 호출. MID 136건은 저장 응답을 이용한 운영 환산 시나리오."]
+  NOTE -.-> M

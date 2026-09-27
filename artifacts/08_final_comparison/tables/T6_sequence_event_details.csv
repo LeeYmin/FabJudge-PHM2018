@@ -1,0 +1,75 @@
+﻿fault,sequence_id,positive_endpoints,LSTM_detected,LSTM_first_lead_seconds,04b_detected,04b_first_lead_seconds,04b_missed_LSTM_detected
+fault1,01_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|22575152,83,True,4914.0,True,4854.0,False
+fault1,01_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|22793870,84,True,4948.0,True,4948.0,False
+fault1,01_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|25636030,82,True,4856.0,False,,True
+fault1,01_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|28126778,84,True,4954.0,True,4954.0,False
+fault1,03_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|5087594,78,True,4998.0,False,,True
+fault1,03_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|6446460,62,True,4974.0,True,4974.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|10614040,57,True,4960.0,True,4960.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|11432132,69,True,4978.0,True,4978.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|13470176,57,True,4954.0,True,4954.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|15386092,75,True,4902.0,True,4902.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|16761984,57,True,4978.0,True,4978.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|18585458,29,True,4996.0,True,4996.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|19641694,74,True,4874.0,True,4874.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|20105938,69,True,4970.0,True,4970.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|20791620,77,True,4964.0,True,4964.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|24469536,48,True,4942.0,True,4942.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|26896164,0,False,,False,,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|27604156,0,False,,False,,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|29115806,0,False,,False,,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|30280108,42,True,4998.0,True,4998.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|30818460,0,False,,False,,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|31559598,74,True,4950.0,True,4950.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|32908380,68,True,4760.0,True,4760.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|3326152,56,True,4942.0,True,4942.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|35207486,55,True,4976.0,True,4976.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|36757494,37,True,4852.0,True,4852.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|36792880,76,True,4998.0,True,4998.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|4528896,2,True,4992.0,True,4992.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|5076390,61,True,4990.0,True,4990.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|5120600,66,True,4912.0,True,4912.0,False
+fault1,03_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|6187286,77,True,4988.0,True,4988.0,False
+fault1,04_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|39934072,56,True,4980.0,True,4980.0,False
+fault1,06_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|40531052,0,False,,False,,False
+fault1,06_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|29722982,79,True,4966.0,True,4966.0,False
+fault1,06_M02_DC_train.csv|FlowCool Pressure Dropped Below Limit|9057166,79,True,4968.0,True,2120.0,False
+fault1,07_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|29525688,60,True,4860.0,False,,True
+fault1,07_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|29643162,21,True,4942.0,False,,True
+fault1,08_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|19955646,0,False,,False,,False
+fault1,08_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|21216184,0,False,,False,,False
+fault1,09_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|14220828,0,False,,False,,False
+fault1,09_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|21030854,64,True,4938.0,True,4938.0,False
+fault1,09_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|22445632,34,True,2406.0,True,2406.0,False
+fault1,09_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|32211542,70,True,4978.0,True,4978.0,False
+fault1,09_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|34810854,15,True,4986.0,True,4986.0,False
+fault1,09_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|37543064,59,True,4982.0,True,4982.0,False
+fault1,09_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|7439202,43,True,4980.0,True,4980.0,False
+fault1,09_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|8079482,53,True,4014.0,True,4014.0,False
+fault1,09_M01_DC_train.csv|FlowCool Pressure Dropped Below Limit|9047576,0,False,,False,,False
+fault2,01_M01_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|12638238,13,True,4976.0,False,,True
+fault2,02_M01_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|29732852,75,True,4808.0,False,,True
+fault2,02_M02_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|17449270,85,True,4988.0,True,1148.0,False
+fault2,02_M02_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|25485676,82,True,4982.0,True,4982.0,False
+fault2,02_M02_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|8739134,0,False,,False,,False
+fault2,03_M01_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|10892430,45,True,4846.0,True,4066.0,False
+fault2,03_M01_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|14704314,0,False,,False,,False
+fault2,03_M02_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|12259164,0,False,,False,,False
+fault2,03_M02_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|24289948,0,False,,False,,False
+fault2,03_M02_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|24470258,38,True,4988.0,True,4988.0,False
+fault2,03_M02_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|25471368,55,True,4956.0,True,4956.0,False
+fault2,03_M02_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|35135358,81,True,4986.0,True,3666.0,False
+fault2,08_M01_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|14652736,84,True,4976.0,True,1976.0,False
+fault2,08_M01_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|19492170,23,True,4884.0,True,4884.0,False
+fault2,08_M01_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|19510074,84,True,4976.0,True,4976.0,False
+fault2,09_M01_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|40225118,46,True,4990.0,True,4990.0,False
+fault2,09_M01_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|42819514,76,True,4990.0,True,4990.0,False
+fault2,09_M02_DC_train.csv|Flowcool Pressure Too High Check Flowcool Pump|19431290,0,False,,False,,False
+fault3,01_M02_DC_train.csv|Flowcool leak|18061382,84,True,4976.0,True,2936.0,False
+fault3,01_M02_DC_train.csv|Flowcool leak|36767406,67,True,4946.0,True,1558.0,False
+fault3,04_M02_DC_train.csv|Flowcool leak|32336080,82,True,4952.0,True,4952.0,False
+fault3,06_M02_DC_train.csv|Flowcool leak|15452954,82,True,4976.0,True,2456.0,False
+fault3,06_M02_DC_train.csv|Flowcool leak|6747106,81,True,4694.0,True,4694.0,False
+fault3,07_M01_DC_train.csv|Flowcool leak|20605838,0,False,,False,,False
+fault3,07_M01_DC_train.csv|Flowcool leak|36682624,0,False,,False,,False
+fault3,08_M01_DC_train.csv|Flowcool leak|38812838,70,True,4880.0,True,4880.0,False

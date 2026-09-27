@@ -1,0 +1,63 @@
+{
+  "primary_population": "fault1+fault2 combined rescue",
+  "primary_budget": "E20 per fault, half-up",
+  "alpha": 0.05,
+  "bootstrap_repetitions": 10000,
+  "bootstrap_seed": 20260927,
+  "random_routing_seed": 20260928,
+  "bootstrap_unit": "sequence within fault; all rescue rows retained per sampled sequence",
+  "feasibility": {
+    "positive_rows": 32,
+    "negative_rows": 217,
+    "rescue_sequences": 37,
+    "status": "PASS"
+  },
+  "H1": {
+    "hypothesis": "JEV precision@E20 - rescue prevalence > 0",
+    "population": "fault1+fault2 rescue",
+    "budget": "E20",
+    "estimate": 0.10204081632653061,
+    "comparator_estimate": 0.1285140562248996,
+    "difference": -0.026473239898368972,
+    "bootstrap_repetitions": 10000,
+    "alpha": 0.05,
+    "one_sided_lower_bound": -0.07193297973916518,
+    "threshold": 0.0,
+    "decision": "FAIL_TO_REJECT",
+    "testing_order": 1,
+    "gatekeeping_status": "TESTED"
+  },
+  "H2": {
+    "hypothesis": "JEV precision@E20 - full LLM precision@E20 > -0.05",
+    "population": "fault1+fault2 rescue",
+    "budget": "E20",
+    "estimate": 0.10204081632653061,
+    "comparator_estimate": 0.10204081632653061,
+    "difference": 0.0,
+    "bootstrap_repetitions": 0,
+    "alpha": 0.05,
+    "one_sided_lower_bound": null,
+    "threshold": -0.05,
+    "noninferiority_margin": -0.05,
+    "decision": "NOT_TESTED_DUE_TO_GATEKEEPING",
+    "testing_order": 2,
+    "gatekeeping_status": "H1 did not pass"
+  },
+  "H3": {
+    "hypothesis": "JEV precision@E20 - mean random routing precision@E20 > 0",
+    "population": "fault1+fault2 rescue",
+    "budget": "E20",
+    "estimate": 0.10204081632653061,
+    "comparator_estimate": 0.13016326530612243,
+    "difference": -0.02812244897959182,
+    "bootstrap_repetitions": 0,
+    "alpha": 0.05,
+    "one_sided_lower_bound": null,
+    "threshold": 0.0,
+    "decision": "NOT_TESTED_DUE_TO_GATEKEEPING",
+    "testing_order": 3,
+    "gatekeeping_status": "H1 did not pass",
+    "random_routing_repetitions": 1000,
+    "bootstrap_random_comparator": "exact conditional expectation of preregistered randomized HIGH/MID/LOW route; point estimate is mean of 1,000 seeded routes"
+  }
+}

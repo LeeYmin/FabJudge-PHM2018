@@ -1,0 +1,11 @@
+﻿check,status
+"07b 저장값 재계산 일치 (atol=1e-9, rtol=0)",PASS
+07b 720행 04b rule 100% 일치,PASS
+06a fault3 기존 80행 TP9 FP4 FN7 TN60,PASS
+전체 causal test endpoint key 완전성,PASS
+LSTM recall >= 04b recall,PASS
+rescue 전부 검토 recall == LSTM recall,PASS
+E10/E20/E30 검토량 및 기대 recall 단조성,PASS
+모든 figure 300 dpi,PASS
+"T1~T6 및 T5b, F1~F7 생성",PASS
+입력 artifact SHA-256 불변,PASS

@@ -1,0 +1,7 @@
+﻿단계,함정,왜 문제인가,어떻게 확인했는가,후속 처리,근거
+06d,dev P2 요청의 in-sample RF leakage,J2/S2 dev 구분력과 적합 설정 오염,ERRATUM 및 06e 저장 비교,영향받은 결과 무효; 06e 정정,artifacts/06d_lstm_jev_oof_edge/ERRATUM.md
+06c,in-sample 성격 dev에서 고른 threshold의 test 붕괴,낙관적 dev 성능은 일반화 증거가 아님,"P2 test recall 0.5000, LSTM 0.9375",규칙 변경 없이 일반화 실패 기록,artifacts/06c_lstm_jev_semantic_gate/summary.json
+06a~06d,"5,000초 label과 early-warning의 차이",5k 밖 경보는 공식 FP이나 곧 고장날 수 있음,"기존 공통 80행의 LSTM FP 8건 중 7건이 TTF 5,500~8,300초; 범위 5546~8344초",공식 TP로 재분류하지 않음; label 유지,artifacts/06c_lstm_jev_semantic_gate/test_results.csv
+07a,표본 상한으로 fault1/2 positive 0건,판별력을 label 기준으로 확증할 수 없음,dev_sample_statistics의 두 fault 양성률 0,prereg v2에서 표본 설계 수정,artifacts/07a_pipeline_skeleton/dev_sample_statistics.json
+07b,고정 길이·failure-anchored sequence의 sample position 누수,미래 fault와 기계적으로 연동된 위치를 배포 feature로 오인 가능,F5 위치별 양성률 및 길이 분포,사용 불가 / leakage diagnostic only,artifacts/07b_rescue_lane_confirmatory/tier_split.csv; artifacts/huang2018/sequence_metadata.csv
+06e 설계,시퀀스 시작 기반 baseline의 위치 누수 가능성,failure-anchored 시작점은 온라인의 외생적 시작점이 아님,"prereg: first 20000 seconds baseline, elapsed >=30000",가능성 진단; 성능 feature로 제안하지 않음,artifacts/06e_fix_and_weakness_diagnosis/prereg_06e.json

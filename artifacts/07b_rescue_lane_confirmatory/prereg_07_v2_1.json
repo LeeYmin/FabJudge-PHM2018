@@ -1,0 +1,369 @@
+{
+  "protocol": "FabJudge 07b rescue lane confirmatory experiment",
+  "version": "prereg_07_v2_1",
+  "revision_reason": [
+    "v1 표본에서는 fault1/2 양성이 0건이어서 주 지표를 정의할 수 없었다.",
+    "07c를 제거하고 07b를 최종 confirmatory experiment로 전환한다.",
+    "최종 비교 대상을 04b로 명시하고 structural rescue lane 설계를 채택한다.",
+    "07a에서는 JEV/LLM 성과를 ground-truth label로 평가한 적이 없다."
+  ],
+  "source_of_truth_paths": {
+    "04b_notebook": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\notebooks\\04b_huang2018_reproduction.ipynb",
+    "04b_source_code": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\src\\fabjudge\\huang2018_models.py",
+    "04b_fault1_predictions": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\huang2018\\fault1_test_predictions.parquet",
+    "04b_fault2_predictions": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\huang2018\\fault2_test_predictions.parquet",
+    "04b_fault3_predictions": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\huang2018\\fault3_test_predictions.parquet",
+    "06a_notebook": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\notebooks\\06a_lstm_jev_hybrid.ipynb",
+    "06a_80_row_sample_plan": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\06a_lstm_jev\\larger_test_01\\sample_plan.csv",
+    "06a_80_row_artifact": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\06a_lstm_jev\\larger_test_01\\pilot_rows.csv",
+    "06a_summary": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\06a_lstm_jev\\larger_test_01\\summary.json",
+    "07a_notebook": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\notebooks\\07a_pipeline_skeleton.ipynb",
+    "07a_execution_script": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\scripts\\run_07a.py",
+    "07a_prepare_code": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\src\\fabjudge\\pipeline\\prepare_07a.py",
+    "07a_api_client_code": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\src\\fabjudge\\pipeline\\clients.py",
+    "07a_packet_builder_code": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\src\\fabjudge\\pipeline\\data.py",
+    "07a_feature_code": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\src\\fabjudge\\pipeline\\features.py",
+    "07a_config": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\07a_pipeline_skeleton\\config.json",
+    "07a_R1_prompt": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\07a_pipeline_skeleton\\questions\\R1.json",
+    "07a_packet_schema": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\07a_pipeline_skeleton\\packet_schema.json",
+    "07a_LLM_output_schema": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\07a_pipeline_skeleton\\llm_output_schema.json",
+    "07a_cost_accounting": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\07a_pipeline_skeleton\\cost_estimate_07b.json",
+    "prereg_07_v1": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\07a_pipeline_skeleton\\prereg_07.json"
+  },
+  "preserved_v1": {
+    "path": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\07a_pipeline_skeleton\\prereg_07.json",
+    "file_bytes_sha256": "9e65c4a8220248b01108e2124697ad282bc6e17c58cfd7072d952484a127e725"
+  },
+  "sampling": {
+    "population": "fault1/fault2/fault3 test original sequences only, from split_metadata.json.",
+    "endpoint_source": "04b fault-specific test prediction parquet; no label columns loaded before ranking freeze.",
+    "alarm": "lstm_pred_seconds <= 5000 seconds.",
+    "percentiles": [
+      5,
+      15,
+      25,
+      35,
+      45,
+      55,
+      65,
+      75,
+      85,
+      95
+    ],
+    "index_rule": "floor((percentile/100)*(n_alarm_endpoints-1))",
+    "duplicate_index": "Coalesce identical row positions and record all percentiles mapped to each row.",
+    "row_cap": null,
+    "counts_by_fault": {
+      "fault1": {
+        "test_sequences": 48,
+        "alarm_endpoint_rows": 13827,
+        "requested_percentile_positions": 480,
+        "unique_sampled_rows": 480
+      },
+      "fault2": {
+        "test_sequences": 18,
+        "alarm_endpoint_rows": 5053,
+        "requested_percentile_positions": 180,
+        "unique_sampled_rows": 180
+      },
+      "fault3": {
+        "test_sequences": 8,
+        "alarm_endpoint_rows": 747,
+        "requested_percentile_positions": 60,
+        "unique_sampled_rows": 60
+      }
+    },
+    "total_unique_rows": 720,
+    "audit_sampling": false
+  },
+  "tier": {
+    "04b_rule": "Saved Huang rule: RF probability >= 0.5; gated LSTM output must agree.",
+    "tier1": "LSTM alarm AND 04b pass; immediate review.",
+    "rescue": "LSTM alarm AND 04b reject; structural rescue population.",
+    "06a_regression": {
+      "rows": 80,
+      "expected_confusion": {
+        "TP": 9,
+        "FP": 4,
+        "FN": 7,
+        "TN": 60
+      }
+    }
+  },
+  "JEV_R2": {
+    "source": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\07a_pipeline_skeleton\\questions\\R1.json",
+    "definition": "07a R1 with only the RF probability sentence and RF references in criteria removed.",
+    "question": {
+      "type": "score",
+      "instructions": "Using only state.features, evaluate the evidence associated with this existing LSTM alarm for a fault within 5000 seconds. Do not estimate a new time to failure. Weigh supporting and contradicting evidence in a balanced way. The alarm is never cancelled by this score; the score only describes how deeply the case should be analyzed. lstm_pred_seconds: smaller values indicate a more imminent fault. recent_lstm_delta: current minus the oldest of the last five causal LSTM predictions; negative means the predicted failure time is falling. recent_lstm_std: population variability across those five predictions. ROTATIONSPEED, IONGAUGEPRESSURE, ETCHSUPPRESSORCURRENT, FLOWCOOLPRESSURE, ETCHBEAMCURRENT, and FLOWCOOLFLOWRATE are current normalized model-input sensor readings; their physical units are unverified. ROTATIONSPEED__rms is RMS magnitude over the current and preceding 99 readings. IONGAUGEPRESSURE__shape_factor and FLOWCOOLPRESSURE__shape_factor are RMS divided by mean absolute magnitude over those 100 readings. ETCHSUPPRESSORCURRENT__peak_abs, FLOWCOOLPRESSURE__peak_abs, and FLOWCOOLFLOWRATE__peak_abs are peak absolute magnitude over those 100 readings. fault_type identifies the fault family (1, 2, or 3); it is not evidence of when the fault will occur. Choose Weak, Uncertain, or Strong from the combined evidence. Do not infer sequence identity, timestamp, or actual failure time.",
+      "criteria": [
+        "Weak: the LSTM trend, and sensor evidence give weak support for urgent analysis; the alarm remains in the review queue",
+        "Uncertain: the LSTM trend, and sensor evidence are mixed or insufficient; the alarm remains in the review queue",
+        "Strong: the LSTM trend, and sensor evidence give strong support for deeper analysis; the alarm remains in the review queue"
+      ]
+    },
+    "question_sha256": "a049939e9ac4de75032f5a9a69a3fd0237374440a8b2d7348fd3523f253fd2d8",
+    "population": "All rescue rows.",
+    "score": "07a native score [0,2], no numeric imputation.",
+    "unavailable": "LOW after scored LOW rows."
+  },
+  "LLM_packet": {
+    "definition": "07a packet v1 with RF field removed; packet_version 07a-evidence-v1-noRF.",
+    "packet_version": "07a-evidence-v1-noRF",
+    "field_order": [
+      "lstm_pred_seconds",
+      "recent_lstm_delta",
+      "recent_lstm_std",
+      "ROTATIONSPEED",
+      "IONGAUGEPRESSURE",
+      "ETCHSUPPRESSORCURRENT",
+      "FLOWCOOLPRESSURE",
+      "ETCHBEAMCURRENT",
+      "FLOWCOOLFLOWRATE",
+      "ROTATIONSPEED__rms",
+      "IONGAUGEPRESSURE__shape_factor",
+      "ETCHSUPPRESSORCURRENT__peak_abs",
+      "FLOWCOOLPRESSURE__shape_factor",
+      "FLOWCOOLPRESSURE__peak_abs",
+      "FLOWCOOLFLOWRATE__peak_abs",
+      "fault_type"
+    ],
+    "fields": [
+      "ETCHBEAMCURRENT",
+      "ETCHSUPPRESSORCURRENT",
+      "ETCHSUPPRESSORCURRENT__peak_abs",
+      "FLOWCOOLFLOWRATE",
+      "FLOWCOOLFLOWRATE__peak_abs",
+      "FLOWCOOLPRESSURE",
+      "FLOWCOOLPRESSURE__peak_abs",
+      "FLOWCOOLPRESSURE__shape_factor",
+      "IONGAUGEPRESSURE",
+      "IONGAUGEPRESSURE__shape_factor",
+      "ROTATIONSPEED",
+      "ROTATIONSPEED__rms",
+      "fault_type",
+      "lstm_pred_seconds",
+      "recent_lstm_delta",
+      "recent_lstm_std"
+    ],
+    "model_id": "~openai/gpt-luna-latest",
+    "generation": {
+      "temperature": 0,
+      "reasoning_effort": "none",
+      "max_tokens": 700,
+      "response_format": "strict_json_schema"
+    },
+    "output_schema_sha256": "1eb69ed80994f731b92f1e1f16f6708491eceabf07fb5186b6f69c4ce129ece6",
+    "population": "Call every rescue row once; reuse the output in every routing comparison."
+  },
+  "stability": {
+    "selection": "07a seeded random choice after sorting sequence_group,row_id; numpy default_rng(20260927), without replacement.",
+    "seed": 20260927,
+    "selected_row_keys": [
+      "ae328d4962caaa4208b80335917fd9e0",
+      "7bbe71263bf3b7e6a533502639cb150b",
+      "e98008a176bdfce305730883309c86f9",
+      "e96c91f95ca8148ea42c6c970f11ad91",
+      "9d19b1d469e040cc25eed5d6e2fd329a"
+    ],
+    "rows": 5,
+    "calls_per_row": 3,
+    "additional_calls": 15
+  },
+  "routing": {
+    "JEV": {
+      "population": "Within each fault's valid-score rescue rows.",
+      "segments": {
+        "HIGH": "top 25%",
+        "MID": "middle 50%",
+        "LOW": "bottom 25%"
+      },
+      "rounding": "round-half-up; score descending then internal row key ascending.",
+      "queue": "HIGH then MID then LOW.",
+      "HIGH_order": "JEV score descending.",
+      "MID_order": "LLM priority_score descending; tie JEV score descending then row key.",
+      "LOW_order": "JEV score descending; unavailable JEV last.",
+      "unavailable": "LOW after valid LOW; MID is half-up 50% of valid JEV scores.",
+      "MID_uses": "The single existing full-rescue LLM output; no route-specific calls.",
+      "audit_sample": false
+    },
+    "full_LLM": "priority_score descending; MODEL_UNAVAILABLE last; no imputation; row-key tie.",
+    "random": {
+      "LLM_budget": "Exact integer JEV MID count per fault.",
+      "remaining": "Random HIGH/LOW allocation in half-up equal counts; random order.",
+      "MID_order": "LLM priority_score descending; randomized tie order.",
+      "repetitions": 1000,
+      "seed": 20260928
+    },
+    "LSTM": {
+      "score": "-lstm_pred_seconds",
+      "segments": {
+        "HIGH": "top 25%",
+        "MID": "middle 50%",
+        "LOW": "bottom 25%"
+      },
+      "rounding": "round-half-up; score descending then row key.",
+      "MID_order": "LLM priority_score descending; tie by -lstm_pred_seconds."
+    },
+    "no_LLM_baselines": {
+      "JEV_only": "JEV score descending.",
+      "LSTM_only": "-lstm_pred_seconds descending.",
+      "Logistic": "07a v1-noRF numeric fields; READY train+validation only; StandardScaler; LogisticRegression(C=1,solver=lbfgs,max_iter=5000)."
+    },
+    "same_LLM_failure": "Reuse the same full-rescue output/unavailable status in every routing comparison."
+  },
+  "review_budgets": {
+    "E": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "primary_E": 0.2,
+    "rounding": "round-half-up per fault rescue count.",
+    "combined": "Pool each fault-specific top-E reviewed rows and positives."
+  },
+  "label": {
+    "positive": "TTF <= 5000 sec",
+    "unit": "seconds"
+  },
+  "primary_population": "fault1+fault2 combined rescue; fault3 separately reported.",
+  "feasibility": {
+    "population": "fault1+fault2 combined rescue",
+    "minimum_positive_rows": 30,
+    "minimum_negative_rows": 30,
+    "minimum_rescue_sequences": 10,
+    "failure": "INSUFFICIENT_CONFIRMATORY_SAMPLE; no H1-H3 formal conclusion, descriptive/exploratory continue."
+  },
+  "hypotheses": {
+    "order": [
+      "H1",
+      "H2",
+      "H3"
+    ],
+    "alpha": 0.05,
+    "bootstrap_repetitions": 10000,
+    "bootstrap": {
+      "unit": "Sequence resampling with replacement within fault; keep all rescue rows.",
+      "seed": 20260927,
+      "lower_bound": "5th percentile; one-sided 95%.",
+      "H3_randomization": "Point comparator is mean of 1,000 seeded budget-matched routes; each sequence-bootstrap replicate uses exact conditional expected precision under the same randomized HIGH/MID/LOW assignment, preserving the frozen LLM order within MID.",
+      "E": "Recompute half-up E20 per fault for each bootstrap sample and use frozen rank."
+    },
+    "H1": "JEV precision@E20 minus rescue positive prevalence; lower bound > 0.",
+    "H2": "JEV precision@E20 minus full LLM precision@E20; margin -0.05; lower bound > -0.05.",
+    "H3": "JEV precision@E20 minus mean of 1,000 random-routing precision@E20; lower bound > 0.",
+    "gatekeeping": "Test H2 only after H1 passes; test H3 only after H1 and H2 pass."
+  },
+  "exploratory_only": [
+    "JEV vs LSTM routing",
+    "full LLM vs logistic",
+    "full LLM vs LSTM-only",
+    "E10",
+    "E30",
+    "fault1",
+    "fault2",
+    "fault3",
+    "stability",
+    "JEV-only",
+    "LSTM-only"
+  ],
+  "effect_vs_04b": {
+    "rescue_recovery": "top-E rescue positives / all sampled rescue positives.",
+    "04b_recall": "tier1 positives / all sampled positives.",
+    "structural_recall": "(tier1 positives + top-E rescue positives) / all sampled positives."
+  },
+  "cost_curve": {
+    "review_cost": 1,
+    "missed_failure_cost_r": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "total": "review_count*1 + missed_positive_count*r",
+    "break_even": "additional review rows / additional recovered positives when positive count is nonzero."
+  },
+  "call_budget": {
+    "max_concurrency": 4,
+    "retry": {
+      "429_or_5xx": 3,
+      "backoff_seconds": [
+        1,
+        2,
+        4
+      ],
+      "LLM_parse_or_schema": 2
+    },
+    "expected_calls": {
+      "JEV": 271,
+      "main_LLM": 271,
+      "stability_LLM": 15,
+      "total": 557
+    },
+    "cost_source": "07a cost_estimate_07b: observed JEV mean call cost; LLM smoke mean cost.",
+    "estimated_cost_usd": {
+      "JEV": 0.01364458389759036,
+      "LLM": 0.07311876,
+      "total": 0.08676334389759037
+    },
+    "cap_usd": 0.11279234706686748,
+    "rule": "Stop before next request if known actual cumulative cost plus preregistered unit estimate exceeds cap."
+  },
+  "failure_handling": {
+    "exhausted_retry": "MODEL_UNAVAILABLE; keep numeric output missing.",
+    "first_schema_failure": "JEV: STOP_FIRST_JEV_SCHEMA_FAILURE; LLM: retry twice, MODEL_UNAVAILABLE on exhaustion.",
+    "LLM_unavailable_ranking": "Sort last; use same status for all routing comparisons.",
+    "no_route_specific_calls": true,
+    "first20_LLM": "Stop if >=3 invalid after retries among first 20 main rows.",
+    "LLM_unavailable_rate": "More than 5% main rescue rows unavailable: descriptive only."
+  },
+  "stop_conditions": [
+    "STOP_04B_REPRODUCTION_FAILED",
+    "STOP_LABEL_OR_IDENTIFIER_LEAK",
+    "STOP_FIRST_JEV_SCHEMA_FAILURE",
+    "STOP_CALL_BUDGET_EXCEEDED",
+    "STOP_PREREG_HASH_MISMATCH",
+    "BLOCKED_SPEC_AMBIGUITY",
+    "STOP_FIRST20_LLM_SCHEMA_FAILURES"
+  ],
+  "test_history_note": "fault3 test was examined in 06 series and is not completely unseen.",
+  "preserved_v2": {
+    "path": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\07b_rescue_lane_confirmatory\\prereg_07_v2.json",
+    "file_bytes_sha256": "9eb9fe21d46451d1bc022c75d28436460d6b411b425e005a6bd8e14d31524cbe"
+  },
+  "amendment_reason": "첫 LLM 응답 1건이 JSON 뒤 추가 텍스트로 파싱에 실패해 STOP_FIRST_LLM_SCHEMA_FAILURE로 중단됨.\n라벨 미개봉, 순위 미확정 상태에서 실행 규칙만 개정함. 가설, 지표, 표본, 정렬 규칙은 변경 없음.",
+  "amendment": {
+    "label_state": "unopened",
+    "ranking_state": "not frozen",
+    "schema_retry": "Same request body, at most 2 additional attempts for LLM parsing/schema failure; complete json.loads only; never partial JSON.",
+    "first20": "First 20 rescue rows sorted by row_key, including same-request successful caches; stop if at least 3 invalid after retries.",
+    "unavailable_rate": "Main rescue LLM unavailable rows / all rescue rows > 0.05: descriptive statistics only, no formal hypothesis testing.",
+    "diagnostics": "Save failed raw text under failed_raw with secrets redacted. Print one actual request body with strict json_schema.",
+    "response_format": {
+      "already_present": true,
+      "settings_changed": false,
+      "type": "json_schema",
+      "strict": true
+    },
+    "cache": "Reuse only exact canonical request SHA-256 match; same settings as v2.",
+    "stability_implementation": "Restrict calls to the five already preregistered STABILITY_KEYS, 3 repeats each.",
+    "sensitivity": "Exclude main LLM MODEL_UNAVAILABLE rows from every frozen ranking, preserve relative order, recompute per-fault E20 and H1-H3 with same sequence bootstrap and gatekeeping; sensitivity only, primary decisions unchanged.",
+    "historical_failed_raw": "Original v2 client did not persist the failed raw response; it cannot be recovered. New failures are persisted."
+  }
+}

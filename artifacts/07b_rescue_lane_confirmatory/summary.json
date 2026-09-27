@@ -1,0 +1,351 @@
+{
+  "completed": true,
+  "stop_condition": null,
+  "notebook": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\notebooks\\07b_rescue_lane_confirmatory.ipynb",
+  "git_commit": null,
+  "python_environment": {
+    "version": "3",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "source_paths": {
+    "04b_notebook": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\notebooks\\04b_huang2018_reproduction.ipynb",
+    "04b_source_code": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\src\\fabjudge\\huang2018_models.py",
+    "04b_fault1_predictions": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\huang2018\\fault1_test_predictions.parquet",
+    "04b_fault2_predictions": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\huang2018\\fault2_test_predictions.parquet",
+    "04b_fault3_predictions": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\huang2018\\fault3_test_predictions.parquet",
+    "06a_notebook": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\notebooks\\06a_lstm_jev_hybrid.ipynb",
+    "06a_80_row_sample_plan": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\06a_lstm_jev\\larger_test_01\\sample_plan.csv",
+    "06a_80_row_artifact": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\06a_lstm_jev\\larger_test_01\\pilot_rows.csv",
+    "06a_summary": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\06a_lstm_jev\\larger_test_01\\summary.json",
+    "07a_notebook": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\notebooks\\07a_pipeline_skeleton.ipynb",
+    "07a_execution_script": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\scripts\\run_07a.py",
+    "07a_prepare_code": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\src\\fabjudge\\pipeline\\prepare_07a.py",
+    "07a_api_client_code": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\src\\fabjudge\\pipeline\\clients.py",
+    "07a_packet_builder_code": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\src\\fabjudge\\pipeline\\data.py",
+    "07a_feature_code": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\src\\fabjudge\\pipeline\\features.py",
+    "07a_config": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\07a_pipeline_skeleton\\config.json",
+    "07a_R1_prompt": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\07a_pipeline_skeleton\\questions\\R1.json",
+    "07a_packet_schema": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\07a_pipeline_skeleton\\packet_schema.json",
+    "07a_LLM_output_schema": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\07a_pipeline_skeleton\\llm_output_schema.json",
+    "07a_cost_accounting": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\07a_pipeline_skeleton\\cost_estimate_07b.json",
+    "prereg_07_v1": "C:\\projects\\FabJudge-PHM2018-starter\\FabJudge-PHM2018\\artifacts\\07a_pipeline_skeleton\\prereg_07.json"
+  },
+  "preserved_v1_prereg_bytes_sha256": "9e65c4a8220248b01108e2124697ad282bc6e17c58cfd7072d952484a127e725",
+  "prereg_v2_bytes_sha256": "9eb9fe21d46451d1bc022c75d28436460d6b411b425e005a6bd8e14d31524cbe",
+  "prereg_v2_1_bytes_sha256": "5112fdb2be2a1618cc52ad3c5e8932d974a2362f04fa245204c5562f406942eb",
+  "amendment_reason": "첫 LLM 응답 1건이 JSON 뒤 추가 텍스트로 파싱에 실패해 STOP_FIRST_LLM_SCHEMA_FAILURE로 중단됨.\n라벨 미개봉, 순위 미확정 상태에서 실행 규칙만 개정함. 가설, 지표, 표본, 정렬 규칙은 변경 없음.",
+  "main_MODEL_UNAVAILABLE": 1,
+  "main_MODEL_UNAVAILABLE_rate": 0.0036900369003690036,
+  "rankings_sha256": "26ffc1a4d6bea99fde201a26c784927dd6529e9c576479930478af8eb6fa36eb",
+  "04b_rule": "LSTM alarm and RF probability >= 0.5",
+  "06a_exact_80_row_confusion": {
+    "TP": 9,
+    "FP": 4,
+    "FN": 7,
+    "TN": 60
+  },
+  "sample": {
+    "total_rows": 720,
+    "rescue_rows": 271,
+    "per_fault": {
+      "fault1": {
+        "test_sequences": 48,
+        "sampled_rows": 480,
+        "tier1_rows": 333,
+        "rescue_rows": 147,
+        "tier1_sequences": 42,
+        "rescue_sequences": 24,
+        "positive_rows": 82
+      },
+      "fault2": {
+        "test_sequences": 18,
+        "sampled_rows": 180,
+        "tier1_rows": 78,
+        "rescue_rows": 102,
+        "tier1_sequences": 12,
+        "rescue_sequences": 13,
+        "positive_rows": 27
+      },
+      "fault3": {
+        "test_sequences": 8,
+        "sampled_rows": 60,
+        "tier1_rows": 38,
+        "rescue_rows": 22,
+        "tier1_sequences": 6,
+        "rescue_sequences": 4,
+        "positive_rows": 37
+      }
+    }
+  },
+  "confirmatory_feasibility": {
+    "status": "PASS",
+    "fault1_fault2_rescue_positive_rows": 32,
+    "negative_rows": 217,
+    "rescue_sequences": 37
+  },
+  "hypothesis_tests": {
+    "primary_population": "fault1+fault2 combined rescue",
+    "primary_budget": "E20 per fault, half-up",
+    "alpha": 0.05,
+    "bootstrap_repetitions": 10000,
+    "bootstrap_seed": 20260927,
+    "random_routing_seed": 20260928,
+    "bootstrap_unit": "sequence within fault; all rescue rows retained per sampled sequence",
+    "feasibility": {
+      "positive_rows": 32,
+      "negative_rows": 217,
+      "rescue_sequences": 37,
+      "status": "PASS"
+    },
+    "H1": {
+      "hypothesis": "JEV precision@E20 - rescue prevalence > 0",
+      "population": "fault1+fault2 rescue",
+      "budget": "E20",
+      "estimate": 0.10204081632653061,
+      "comparator_estimate": 0.1285140562248996,
+      "difference": -0.026473239898368972,
+      "bootstrap_repetitions": 10000,
+      "alpha": 0.05,
+      "one_sided_lower_bound": -0.07193297973916518,
+      "threshold": 0.0,
+      "decision": "FAIL_TO_REJECT",
+      "testing_order": 1,
+      "gatekeeping_status": "TESTED"
+    },
+    "H2": {
+      "hypothesis": "JEV precision@E20 - full LLM precision@E20 > -0.05",
+      "population": "fault1+fault2 rescue",
+      "budget": "E20",
+      "estimate": 0.10204081632653061,
+      "comparator_estimate": 0.10204081632653061,
+      "difference": 0.0,
+      "bootstrap_repetitions": 0,
+      "alpha": 0.05,
+      "one_sided_lower_bound": null,
+      "threshold": -0.05,
+      "noninferiority_margin": -0.05,
+      "decision": "NOT_TESTED_DUE_TO_GATEKEEPING",
+      "testing_order": 2,
+      "gatekeeping_status": "H1 did not pass"
+    },
+    "H3": {
+      "hypothesis": "JEV precision@E20 - mean random routing precision@E20 > 0",
+      "population": "fault1+fault2 rescue",
+      "budget": "E20",
+      "estimate": 0.10204081632653061,
+      "comparator_estimate": 0.13016326530612243,
+      "difference": -0.02812244897959182,
+      "bootstrap_repetitions": 0,
+      "alpha": 0.05,
+      "one_sided_lower_bound": null,
+      "threshold": 0.0,
+      "decision": "NOT_TESTED_DUE_TO_GATEKEEPING",
+      "testing_order": 3,
+      "gatekeeping_status": "H1 did not pass",
+      "random_routing_repetitions": 1000,
+      "bootstrap_random_comparator": "exact conditional expectation of preregistered randomized HIGH/MID/LOW route; point estimate is mean of 1,000 seeded routes"
+    }
+  },
+  "effect_vs_04b": [
+    {
+      "scope": "fault1+fault2",
+      "E": 10,
+      "additional_review_rows": 25,
+      "rescue_positive_rows": 32,
+      "imminent_failures_recovered": 3,
+      "rescue_recovery_rate": 0.09375,
+      "rescue_precision": 0.12,
+      "tier1_positive_rows": 77,
+      "total_sampled_positive_rows": 109,
+      "04b_recall": 0.7064220183486238,
+      "structural_recall": 0.7339449541284404,
+      "recall_change_vs_04b": 0.027522935779816515
+    },
+    {
+      "scope": "fault1+fault2",
+      "E": 20,
+      "additional_review_rows": 49,
+      "rescue_positive_rows": 32,
+      "imminent_failures_recovered": 5,
+      "rescue_recovery_rate": 0.15625,
+      "rescue_precision": 0.10204081632653061,
+      "tier1_positive_rows": 77,
+      "total_sampled_positive_rows": 109,
+      "04b_recall": 0.7064220183486238,
+      "structural_recall": 0.7522935779816514,
+      "recall_change_vs_04b": 0.045871559633027525
+    },
+    {
+      "scope": "fault1+fault2",
+      "E": 30,
+      "additional_review_rows": 75,
+      "rescue_positive_rows": 32,
+      "imminent_failures_recovered": 9,
+      "rescue_recovery_rate": 0.28125,
+      "rescue_precision": 0.12,
+      "tier1_positive_rows": 77,
+      "total_sampled_positive_rows": 109,
+      "04b_recall": 0.7064220183486238,
+      "structural_recall": 0.7889908256880734,
+      "recall_change_vs_04b": 0.08256880733944955
+    }
+  ],
+  "cost_and_calls": {
+    "expected_logical_calls": {
+      "JEV": 271,
+      "main_LLM": 271,
+      "stability_LLM": 15,
+      "total": 557
+    },
+    "actual_API_requests": {
+      "JEV": 271,
+      "main_LLM": 282,
+      "stability_LLM": 15,
+      "total": 568
+    },
+    "retry_count": 11,
+    "unavailable_outputs": 1,
+    "projected_full_LLM_equivalent_calls": 271,
+    "JEV_routing_LLM_equivalent_calls": 136,
+    "LLM_call_reduction_pct": 49.815498154981555,
+    "07b_API_cost_reported_usd": 0.08807153799999999,
+    "07b_API_cost_fallback_estimated_usd": 0.0,
+    "07b_API_cost_by_stage_reported_usd": {
+      "jev": 0.013059437999999991,
+      "llm_main": 0.0714501,
+      "llm_stability": 0.003562
+    },
+    "07b_API_cost_by_stage_fallback_usd": {
+      "jev": 0.0,
+      "llm_main": 0.0,
+      "llm_stability": 0.0
+    },
+    "equivalent_full_LLM_response_cost_usd": 0.067353,
+    "equivalent_routed_LLM_cost_usd": 0.0345124,
+    "equivalent_JEV_R2_cost_usd": 0.013059438,
+    "equivalent_JEV_plus_routed_LLM_cost_usd": 0.047571838,
+    "estimated_monetary_saving_usd": 0.019781161999999998,
+    "estimated_saving_pct": 29.369385179576263,
+    "pre_call_estimated_cost_usd": {
+      "JEV": 0.01364458389759036,
+      "LLM": 0.07311876,
+      "total": 0.08676334389759037,
+      "cap": 0.11279234706686748
+    },
+    "actual_cost_guard": {
+      "guard_spend_usd": 0.08807153800000005,
+      "reported_cost_usd": 0.08807153800000005,
+      "fallback_estimated_cost_usd": 0.0,
+      "reserved_usd": 0.0,
+      "cap_usd": 0.11279234706686748
+    }
+  },
+  "labels_first_loaded_utc": "2026-09-27T12:11:34.951266+00:00",
+  "limits": [
+    "Percentile sample of LSTM alarm endpoints; not all endpoints or a population event-rate estimate.",
+    "fault3 test sequences were examined in the 06 series and are not completely unseen.",
+    "fault1+fault2 is the primary confirmatory population; fault3 is reported separately."
+  ],
+  "output_files": [
+    "prereg_07_v2.json",
+    "eval_sample.csv",
+    "eval_labels.csv",
+    "tier_split.csv",
+    "jev_R2_scores.csv",
+    "llm_noRF_results.jsonl",
+    "llm_stability.csv",
+    "rankings.csv",
+    "hypothesis_tests.json",
+    "effect_vs_04b.csv",
+    "cost_curve.csv",
+    "exploratory.csv",
+    "trial_log.md",
+    "summary.json",
+    "prereg_07_v2_1.json",
+    "sensitivity_excluding_MODEL_UNAVAILABLE.json",
+    "actual_request_body_example.json",
+    "availability_diagnostic.json",
+    "first20_diagnostic.json",
+    "conclusion.md",
+    "resume_audit.json"
+  ],
+  "sensitivity_excluding_MODEL_UNAVAILABLE": {
+    "primary_population": "fault1+fault2 combined rescue",
+    "primary_budget": "E20 per fault, half-up",
+    "alpha": 0.05,
+    "bootstrap_repetitions": 10000,
+    "bootstrap_seed": 20260927,
+    "random_routing_seed": 20260928,
+    "bootstrap_unit": "sequence within fault; all rescue rows retained per sampled sequence",
+    "feasibility": {
+      "positive_rows": 32,
+      "negative_rows": 216,
+      "rescue_sequences": 37,
+      "status": "PASS"
+    },
+    "H1": {
+      "hypothesis": "JEV precision@E20 - rescue prevalence > 0",
+      "population": "fault1+fault2 rescue",
+      "budget": "E20",
+      "estimate": 0.10204081632653061,
+      "comparator_estimate": 0.12903225806451613,
+      "difference": -0.02699144173798551,
+      "bootstrap_repetitions": 10000,
+      "alpha": 0.05,
+      "one_sided_lower_bound": -0.07236479697871286,
+      "threshold": 0.0,
+      "decision": "FAIL_TO_REJECT",
+      "testing_order": 1,
+      "gatekeeping_status": "TESTED"
+    },
+    "H2": {
+      "hypothesis": "JEV precision@E20 - full LLM precision@E20 > -0.05",
+      "population": "fault1+fault2 rescue",
+      "budget": "E20",
+      "estimate": 0.10204081632653061,
+      "comparator_estimate": 0.10204081632653061,
+      "difference": 0.0,
+      "bootstrap_repetitions": 0,
+      "alpha": 0.05,
+      "one_sided_lower_bound": null,
+      "threshold": -0.05,
+      "noninferiority_margin": -0.05,
+      "decision": "NOT_TESTED_DUE_TO_GATEKEEPING",
+      "testing_order": 2,
+      "gatekeeping_status": "H1 did not pass"
+    },
+    "H3": {
+      "hypothesis": "JEV precision@E20 - mean random routing precision@E20 > 0",
+      "population": "fault1+fault2 rescue",
+      "budget": "E20",
+      "estimate": 0.10204081632653061,
+      "comparator_estimate": 0.13089795918367345,
+      "difference": -0.02885714285714283,
+      "bootstrap_repetitions": 0,
+      "alpha": 0.05,
+      "one_sided_lower_bound": null,
+      "threshold": 0.0,
+      "decision": "NOT_TESTED_DUE_TO_GATEKEEPING",
+      "testing_order": 3,
+      "gatekeeping_status": "H1 did not pass",
+      "random_routing_repetitions": 1000,
+      "bootstrap_random_comparator": "exact conditional expectation of preregistered randomized HIGH/MID/LOW route; point estimate is mean of 1,000 seeded routes"
+    },
+    "analysis_type": "Sensitivity only; does not change primary decisions",
+    "excluded_main_MODEL_UNAVAILABLE": 1
+  },
+  "resume_audit": {
+    "reused_caches_by_stage": {
+      "jev": 271,
+      "llm_main": 6
+    },
+    "resume_API_requests_by_stage": {
+      "llm_main": 275,
+      "llm_stability": 15
+    },
+    "failed_raw_files": 11,
+    "original_v2_failed_raw_recoverable": false,
+    "prereg_v2_1_sha256": "5112fdb2be2a1618cc52ad3c5e8932d974a2362f04fa245204c5562f406942eb",
+    "rankings_sha256": "26ffc1a4d6bea99fde201a26c784927dd6529e9c576479930478af8eb6fa36eb"
+  }
+}

@@ -1,0 +1,4 @@
+fault,paper_train_sequences,paper_test_sequences,reproduction_valid_sequences,paper_RFR_RMSE_seconds,paper_LSTM_RMSE_seconds,reproduction_LSTM_RMSE_seconds,paper_LSTM_SMAPE_percent,reproduction_LSTM_SMAPE_percent,old_04_full_range_RMSE_seconds,old_04_full_range_R2
+fault1,199,39,250,5294,1877,780.1328062280998,13.9,8.372025244946537,7870022.11,-0.595888955
+fault2,23,4,93,5567,2557,1561.9557204674513,16.94,13.51669082433245,8707703.688,-0.542861158
+fault3,44,10,48,5476,1469,4045.8746470792,11.74,16.675149912459474,7872709.387,-0.552500462

@@ -1,0 +1,8 @@
+﻿노트북,질문,핵심 수치,결론,상태,근거 파일 경로
+06a,초기 hybrid의 보수적 경보 제거 가능성,제거 경보 0건,보수적 JEV routing에서 경보 제거 없음,확인,artifacts/06a_lstm_jev/larger_test_01/summary.json
+06b,후속 prompt/sensor routing으로 FP 제거 가능한가,제거 경보 0건,탐색: 경보 제거 없음,확인,artifacts/06b_lstm_jev_sensor_skip/summary.json
+06c,dev threshold가 test에서도 유지되는가,P2 test recall=0.5000; LSTM=0.9375,"탐색: train dev의 in-sample 성격, test recall 급락으로 일반화 실패",확인,artifacts/06c_lstm_jev_semantic_gate/summary.json; notebooks/06c_lstm_jev_semantic_gate.ipynb
+06d,OOF/edge 결합에서 독립 신호가 있는가,J2 dev AUC=0.830508 (무효),"dev P2 요청에 in-sample RF 사용: 영향받은 J2/S2 dev 결과와 적합 설정 무효, 06e 정정",정정됨,artifacts/06d_lstm_jev_oof_edge/ERRATUM.md
+06e,leakage 정정 및 긴 window 검증,정정 J2 dev AUC=0.593220,탐색: RF 누수 정정; 긴 window는 클래스별 시퀀스 근거 부족으로 검증 불가,확인,artifacts/06e_fix_and_weakness_diagnosis/dev_metric_comparison.csv; artifacts/06e_fix_and_weakness_diagnosis/conclusion.md
+07a,infrastructure / pipeline sanity check,"fault1/2 positive=0건; 표본 상한 600, 시퀀스당 1행",성능 확증 아님; 표본 상한 문제에 따라 prereg v2에서 percentile 표본 설계 수정,확인,artifacts/07a_pipeline_skeleton/dev_sample_statistics.json; artifacts/07b_rescue_lane_confirmatory/prereg_07_v2.json
+07b,최종 사전등록 확증,H1=FAIL_TO_REJECT; H2/H3=NOT_TESTED_DUE_TO_GATEKEEPING,H1 실패; H2/H3 gatekeeping 미검정. JEV/LLM superiority 근거 없음,확인,artifacts/07b_rescue_lane_confirmatory/hypothesis_tests.json
